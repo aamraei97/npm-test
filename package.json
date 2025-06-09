@@ -1,0 +1,31 @@
+{
+  "name": "npm-test",
+  "version": "1.0.0",
+  "description": "npm test",
+  "keyword": [
+    "demo"
+  ],
+  "homepage": "https://github.com/aamraei97/npm-test",
+  "bugs": {
+    "url": "https://github.com/aamraei97/npm-test/issues"
+  },
+  "author": "Arman Amraei <aamraei97@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aamraei97/npm-test.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "ci": "npm run build",
+    "format": "prettier --write ."
+  }
+}

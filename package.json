@@ -9,6 +9,7 @@
   "bugs": {
     "url": "https://github.com/aamraei97/npm-test/issues"
   },
+  "main": "dist/index.js",
   "author": "Arman Amraei <aamraei97@gmail.com>",
   "repository": {
     "type": "git",
@@ -20,12 +21,18 @@
   "type": "module",
   "license": "MIT",
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.1",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.2"
   },
   "scripts": {
     "build": "tsc",
-    "ci": "npm run build",
-    "format": "prettier --write ."
+    "ci": "npm run build && npm run check-format && npm run check-exports npm run lint && npm run test",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "test": "vitest run",
+    "dev": "vitest"
   }
 }
